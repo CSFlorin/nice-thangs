@@ -29,4 +29,4 @@ if __name__ == "__main__":
             'thangs': R(thangs)
         }
         doc.render(context)
-        doc.save("out/" + column + ".docx")
+        doc.save(f"{out}{column}.docx")
