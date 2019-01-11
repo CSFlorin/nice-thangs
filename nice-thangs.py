@@ -12,9 +12,9 @@ def format_name(name):
 
 
 if __name__ == "__main__":
-    dir = 'out/'
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+    out = 'out/'
+    if not os.path.exists(out):
+        os.makedirs(out)
 
     df = pd.read_csv("nice-thangs.csv")
     df = df.drop(['Timestamp'], axis=1)
