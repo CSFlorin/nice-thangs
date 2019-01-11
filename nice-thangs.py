@@ -1,5 +1,6 @@
 from docxtpl import DocxTemplate, R
 import pandas as pd
+import os
 
 
 def format_name(name):
@@ -11,6 +12,10 @@ def format_name(name):
 
 
 if __name__ == "__main__":
+    dir = 'out/'
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
     df = pd.read_csv("nice-thangs.csv")
     df = df.drop(['Timestamp'], axis=1)
 
@@ -24,5 +29,4 @@ if __name__ == "__main__":
             'thangs': R(thangs)
         }
         doc.render(context)
-        doc.save("out/" + column + "2.docx")
-        exit()
+        doc.save("out/" + column + ".docx")
